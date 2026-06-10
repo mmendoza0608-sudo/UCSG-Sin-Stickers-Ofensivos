@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UCSG Sin Stickers · Mundial 2026</title>
+<meta name="theme-color" content="#FFD100">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#0D0F14;color:#EEF0F5;min-height:100vh;display:flex;flex-direction:column}
+/* tricolor top bar */
+.tricolor{height:5px;background:linear-gradient(90deg,#FFD100 33.3%,#003DA5 33.3% 66.6%,#C8102E 66.6%)}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px;text-align:center;position:relative;overflow:hidden}
+/* subtle ecuador flag watermark */
+.flag-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:320px;height:210px;border-radius:12px;overflow:hidden;opacity:.04;pointer-events:none}
+.flag-bg div:nth-child(1){height:70px;background:#FFD100}
+.flag-bg div:nth-child(2){height:70px;background:#003DA5}
+.flag-bg div:nth-child(3){height:70px;background:#C8102E}
+.logo-wrap{margin-bottom:28px;position:relative}
+.flag-icon{font-size:56px;display:block;margin-bottom:12px;filter:drop-shadow(0 4px 16px rgba(255,209,0,.3))}
+.group-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,6vw,48px);color:#fff;letter-spacing:.1em;line-height:1;margin-bottom:4px}
+.group-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:#6B7A99;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+/* tricolor text effect for title */
+.title-line{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,7vw,64px);letter-spacing:.05em;line-height:1;margin-bottom:6px}
+.t-yellow{color:#FFD100}
+.t-blue{color:#003DA5}
+.t-red{color:#C8102E}
+.t-white{color:#fff}
+.sub{font-size:13px;color:#6B7A99;margin-bottom:48px;font-family:'JetBrains Mono',monospace;letter-spacing:.06em}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:680px;width:100%}
+.card{background:#141720;border:1px solid rgba(255,209,0,.14);border-radius:18px;padding:28px 22px;text-decoration:none;color:inherit;transition:all .22s;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.card.quiniela::before{background:linear-gradient(90deg,#FFD100,#C8102E)}
+.card.fixture::before{background:linear-gradient(90deg,#003DA5,#FFD100)}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(255,209,0,.08)}
+.card.quiniela:hover{border-color:rgba(255,209,0,.4)}
+.card.fixture:hover{border-color:rgba(0,61,165,.5)}
+.card-icon{font-size:38px;line-height:1}
+.card-title{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#fff;letter-spacing:.05em}
+.card-desc{font-size:13px;color:#6B7A99;line-height:1.6}
+.badge{display:inline-flex;align-items:center;gap:5px;border-radius:8px;padding:4px 10px;font-size:11px;font-family:'JetBrains Mono',monospace;margin-top:4px;width:fit-content}
+.badge-yellow{background:rgba(255,209,0,.1);border:1px solid rgba(255,209,0,.25);color:#FFD100}
+.badge-blue{background:rgba(0,61,165,.2);border:1px solid rgba(0,61,165,.4);color:#5B8AE0}
+/* rule strip */
+.rules{max-width:680px;width:100%;background:#141720;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:16px 20px;margin-top:8px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.rule{display:flex;align-items:center;gap:7px;font-size:12px;color:#6B7A99}
+.rule-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.footer{padding:20px 24px;text-align:center;font-size:11px;color:#2E3A55;font-family:'JetBrains Mono',monospace;border-top:1px solid rgba(255,255,255,.05)}
+.tricolor-footer{height:3px;background:linear-gradient(90deg,#FFD100 33.3%,#003DA5 33.3% 66.6%,#C8102E 66.6%)}
+@media(max-width:520px){.cards{grid-template-columns:1fr}.title-line{font-size:38px}.rules{gap:10px}}
+</style>
+</head>
+<body>
+<div class="tricolor"></div>
+<div class="hero">
+  <div class="flag-bg"><div></div><div></div><div></div></div>
+  <div class="logo-wrap">
+    <svg width="80" height="86" viewBox="0 0 48 52" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 4px 20px rgba(255,209,0,.25));margin-bottom:4px">
+      <defs><clipPath id="sc"><path d="M4 4 L44 4 L44 36 Q44 48 24 50 Q4 48 4 36 Z"/></clipPath></defs>
+      <path d="M4 4 L44 4 L44 36 Q44 48 24 50 Q4 48 4 36 Z" fill="#003DA5"/>
+      <path d="M4 4 L44 4 L44 18 L4 18 Z" fill="#FFD100" clip-path="url(#sc)"/>
+      <path d="M4 18 L44 18 L44 30 L4 30 Z" fill="#003DA5" clip-path="url(#sc)"/>
+      <path d="M4 30 L44 30 L44 50 L4 50 Z" fill="#C8102E" clip-path="url(#sc)"/>
+      <ellipse cx="24" cy="22" rx="14" ry="11" fill="#5B9BD5" clip-path="url(#sc)"/>
+      <path d="M10 28 L16 18 L20 22 L24 16 L28 22 L32 18 L38 28 Z" fill="#8B7355" clip-path="url(#sc)"/>
+      <path d="M20 22 L24 16 L28 22 Z" fill="white" opacity=".9" clip-path="url(#sc)"/>
+      <path d="M10 27 Q15 25 20 27 Q25 29 30 27 Q35 25 38 27 L38 29 Q33 31 28 29 Q23 27 18 29 Q13 31 10 29 Z" fill="#003DA5" opacity=".7" clip-path="url(#sc)"/>
+      <rect x="20" y="26" width="8" height="3" rx="1" fill="#8B4513" clip-path="url(#sc)"/>
+      <path d="M22 26 L22 22 L27 25 Z" fill="#C8A800" opacity=".9" clip-path="url(#sc)"/>
+      <circle cx="24" cy="11" r="3" fill="#FFD100" clip-path="url(#sc)"/>
+      <path d="M24 2 Q20 4 17 3 Q19 5 20 7 Q22 5 24 6 Q26 5 28 7 Q29 5 31 3 Q28 4 24 2 Z" fill="#8B4513"/>
+      <circle cx="24" cy="2.5" r="1.2" fill="#8B4513"/>
+      <path d="M20 7 Q15 5 12 7 Q14 8 17 8 Q18 7 20 7Z" fill="#5C3317"/>
+      <path d="M28 7 Q31 7 36 7 Q33 5 28 7Z" fill="#5C3317"/>
+      <path d="M4 4 L44 4 L44 36 Q44 48 24 50 Q4 48 4 36 Z" fill="none" stroke="#C8A800" stroke-width="1.8"/>
+      <path d="M3 10 Q0 15 2 22 Q4 18 3 14 Q5 17 4 20 Q6 16 5 12Z" fill="#228B22" opacity=".9"/>
+      <path d="M3 22 Q0 28 2 34 Q4 30 3 26 Q5 29 4 32 Q6 28 5 24Z" fill="#228B22" opacity=".9"/>
+      <path d="M45 10 Q48 15 46 22 Q44 18 45 14 Q43 17 44 20 Q42 16 43 12Z" fill="#228B22" opacity=".9"/>
+      <path d="M45 22 Q48 28 46 34 Q44 30 45 26 Q43 29 44 32 Q42 28 43 24Z" fill="#228B22" opacity=".9"/>
+    </svg>
+    <div class="group-name">UCSG</div>
+    <div class="group-sub">Sin Stickers Ofensivos</div>
+  </div>
+
+  <div class="title-line">
+    <span class="t-yellow">MUNDI</span><span class="t-white">AL </span><span class="t-blue">20</span><span class="t-red">26</span>
+  </div>
+  <div class="sub">USA · México · Canadá &nbsp;·&nbsp; 11 Jun – 19 Jul 2026</div>
+
+  <div class="cards">
+    <a href="quiniela_ucsg.html" class="card quiniela">
+      <div class="card-icon">🏆</div>
+      <div class="card-title">Quiniela</div>
+      <div class="card-desc">Predice los resultados de cada partido antes de que empiece. Ranking en tiempo real para todo el grupo.</div>
+      <div class="badge badge-yellow">⚽ Regístrate y participa</div>
+    </a>
+    <a href="fixture_ucsg.html" class="card fixture">
+      <div class="card-icon">📋</div>
+      <div class="card-title">Fixture</div>
+      <div class="card-desc">Calendario completo con los 72 partidos, tabla de posiciones y fichas de todas las selecciones.</div>
+      <div class="badge badge-blue">📅 Fixture oficial FIFA</div>
+    </a>
+  </div>
+
+  <a href="reglas.html" style="display:inline-flex;align-items:center;gap:7px;margin-top:16px;padding:8px 18px;background:rgba(255,209,0,.08);border:1px solid rgba(255,209,0,.22);border-radius:10px;color:#FFD100;font-family:'JetBrains Mono',monospace;font-size:12px;text-decoration:none;transition:all .2s" onmouseover="this.style.background='rgba(255,209,0,.15)'" onmouseout="this.style.background='rgba(255,209,0,.08)'">📋 Ver reglas completas</a>
+
+  <div class="rules" style="margin-top:16px">
+    <div class="rule"><div class="rule-dot" style="background:#FFD100"></div><span><b style="color:#FFD100">+3 pts</b> — Marcador exacto</span></div>
+    <div class="rule"><div class="rule-dot" style="background:#003DA5"></div><span><b style="color:#5B8AE0">+1 pt</b> — Ganador correcto</span></div>
+    <div class="rule"><div class="rule-dot" style="background:#C8102E"></div><span><b style="color:#E05B6B">0 pts</b> — Resultado incorrecto</span></div>
+    <div class="rule"><div class="rule-dot" style="background:#6B7A99"></div><span>Cierre automático al inicio del partido</span></div>
+  </div>
+</div>
+
+<div class="footer">UCSG Sin Stickers Ofensivos · Mundial 2026 · Hecho con ❤️ en Ecuador 🇪🇨</div>
+<div class="tricolor-footer"></div>
+</body>
+</html>

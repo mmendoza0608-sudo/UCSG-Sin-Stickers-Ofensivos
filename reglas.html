@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reglas · Quiniela Mundial 2026</title>
+<meta name="theme-color" content="#FFD100">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#0D0F14;color:#EEF0F5;min-height:100vh;font-size:14px;line-height:1.7}
+.tricolor{height:5px;background:linear-gradient(90deg,#FFD100 33.3%,#003DA5 33.3% 66.6%,#C8102E 66.6%)}
+.nav{background:#141720;border-bottom:1px solid rgba(255,209,0,.12);padding:0 24px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:800px;margin:0 auto;height:52px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#fff;letter-spacing:.1em;display:flex;align-items:center;gap:10px}
+.back{font-family:'JetBrains Mono',monospace;font-size:11px;color:#6B7A99;text-decoration:none;padding:5px 12px;border:1px solid rgba(255,209,0,.2);border-radius:8px;transition:all .2s}
+.back:hover{color:#FFD100;border-color:#FFD100}
+.main{max-width:800px;margin:0 auto;padding:40px 24px 60px}
+/* HERO */
+.hero{text-align:center;margin-bottom:48px;padding:40px 24px;background:#141720;border:1px solid rgba(255,209,0,.14);border-radius:20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#FFD100,#003DA5,#C8102E)}
+.hero-flag{font-size:52px;display:block;margin-bottom:12px}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,6vw,54px);color:#fff;letter-spacing:.06em;line-height:1;margin-bottom:8px}
+.hero h1 span{color:#FFD100}
+.hero-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:#6B7A99;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+.hero-desc{font-size:14px;color:#6B7A99;max-width:480px;margin:0 auto}
+/* SECTION */
+.section{margin-bottom:36px}
+.section-hdr{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,209,0,.12)}
+.section-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:16px;flex-shrink:0}
+.num-yellow{background:rgba(255,209,0,.15);color:#FFD100;border:1px solid rgba(255,209,0,.3)}
+.num-blue{background:rgba(0,61,165,.25);color:#5B8AE0;border:1px solid rgba(0,61,165,.4)}
+.num-red{background:rgba(200,16,46,.15);color:#E05B6B;border:1px solid rgba(200,16,46,.3)}
+.num-green{background:rgba(34,197,94,.12);color:#22C55E;border:1px solid rgba(34,197,94,.25)}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:.04em}
+/* CARDS GRID */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.rule-card{background:#141720;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:16px;transition:border-color .2s}
+.rule-card:hover{border-color:rgba(255,209,0,.25)}
+.rc-icon{font-size:28px;margin-bottom:8px;display:block}
+.rc-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:4px}
+.rc-body{font-size:12px;color:#6B7A99;line-height:1.6}
+/* POINTS TABLE */
+.pts-table{width:100%;border-collapse:collapse}
+.pts-table th{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#6B7A99;padding:10px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.07)}
+.pts-table td{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px}
+.pts-table tr:last-child td{border-bottom:none}
+.pts-table tr:hover td{background:rgba(255,209,0,.03)}
+.pts-val{font-family:'Bebas Neue',sans-serif;font-size:22px}
+.pts-3{color:#FFD100}
+.pts-1{color:#5B8AE0}
+.pts-0{color:#6B7A99}
+.pts-example{font-size:11px;color:#6B7A99;margin-top:2px;display:block;font-family:'JetBrains Mono',monospace}
+/* TIMELINE */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#FFD100,#003DA5,#C8102E)}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{width:18px;height:18px;border-radius:50%;position:absolute;left:-23px;top:3px;border:2px solid var(--dark);display:flex;align-items:center;justify-content:center;font-size:9px}
+.tl-content h4{font-size:13px;font-weight:600;color:#fff;margin-bottom:3px}
+.tl-content p{font-size:12px;color:#6B7A99;line-height:1.5}
+/* TIEBREAK */
+.tiebreak{background:#141720;border:1px solid rgba(200,16,46,.2);border-left:3px solid #C8102E;border-radius:12px;padding:16px 18px}
+.tiebreak h4{font-size:13px;font-weight:600;color:#fff;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.tiebreak ol{padding-left:18px}
+.tiebreak li{font-size:13px;color:#6B7A99;margin-bottom:6px;line-height:1.5}
+.tiebreak li strong{color:#EEF0F5}
+/* RULES BOX */
+.rules-box{background:#141720;border:1px solid rgba(255,209,0,.14);border-radius:14px;overflow:hidden}
+.rb-row{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.05)}
+.rb-row:last-child{border-bottom:none}
+.rb-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.rb-text h4{font-size:13px;font-weight:600;color:#fff;margin-bottom:2px}
+.rb-text p{font-size:12px;color:#6B7A99;line-height:1.5}
+/* HIGHLIGHT */
+.highlight{background:rgba(255,209,0,.07);border:1px solid rgba(255,209,0,.2);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.hl-icon{font-size:22px;flex-shrink:0}
+.hl-text{font-size:13px;color:#6B7A99;line-height:1.6}
+.hl-text strong{color:#FFD100}
+/* BADGE */
+.badge{display:inline-flex;align-items:center;padding:2px 9px;border-radius:8px;font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:500}
+.b-yellow{background:rgba(255,209,0,.12);color:#FFD100;border:1px solid rgba(255,209,0,.25)}
+.b-blue{background:rgba(0,61,165,.2);color:#5B8AE0;border:1px solid rgba(0,61,165,.35)}
+.b-red{background:rgba(200,16,46,.12);color:#E05B6B;border:1px solid rgba(200,16,46,.25)}
+.footer{padding:24px;text-align:center;font-size:11px;color:#2E3A55;font-family:'JetBrains Mono',monospace;border-top:1px solid rgba(255,255,255,.05)}
+@media(max-width:600px){.main{padding:24px 16px 48px}.cards-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="tricolor"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      🇪🇨
+      <span>UCSG · Sin Stickers</span>
+    </div>
+    <a href="index_ucsg.html" class="back">← Inicio</a>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="hero-flag">🏆</span>
+    <h1>REGLAS DE LA <span>QUINIELA</span></h1>
+    <div class="hero-sub">UCSG Sin Stickers Ofensivos · Mundial 2026</div>
+    <p class="hero-desc">Todo lo que necesitas saber para participar, puntuar y ganar el torneo más importante de los próximos 40 días.</p>
+  </div>
+
+  <!-- 1. CÓMO PARTICIPAR -->
+  <div class="section">
+    <div class="section-hdr">
+      <div class="section-num num-yellow">1</div>
+      <span class="section-title">Cómo participar</span>
+    </div>
+    <div class="cards-grid">
+      <div class="rule-card">
+        <span class="rc-icon">📱</span>
+        <div class="rc-title">Regístrate</div>
+        <div class="rc-body">Entra a la quiniela, crea tu cuenta con nombre, empresa y contraseña. Un registro por persona.</div>
+      </div>
+      <div class="rule-card">
+        <span class="rc-icon">⚽</span>
+        <div class="rc-title">Predice</div>
+        <div class="rc-body">Ingresa el marcador exacto que crees que terminará cada partido antes de que empiece.</div>
+      </div>
+      <div class="rule-card">
+        <span class="rc-icon">🔒</span>
+        <div class="rc-title">Cierre automático</div>
+        <div class="rc-body">Al llegar la hora del partido se bloquea automáticamente. No se aceptan cambios después.</div>
+      </div>
+      <div class="rule-card">
+        <span class="rc-icon">🏅</span>
+        <div class="rc-title">Acumula puntos</div>
+        <div class="rc-body">Los puntos se suman conforme el admin ingresa los resultados reales de cada partido.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SISTEMA DE PUNTOS -->
+  <div class="section">
+    <div class="section-hdr">
+      <div class="section-num num-yellow">2</div>
+      <span class="section-title">Sistema de puntos</span>
+    </div>
+    <div class="rules-box">
+      <table class="pts-table">
+        <thead>
+          <tr>
+            <th>Resultado</th>
+            <th>Condición</th>
+            <th style="text-align:right">Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-size:18px">⭐</span>
+                <div>
+                  <div style="font-weight:600;color:#FFD100">Marcador exacto</div>
+                  <span class="pts-example">Predijiste 2-1 y terminó 2-1</span>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:12px;color:#6B7A99">Goles local Y visitante exactos</td>
+            <td style="text-align:right"><span class="pts-val pts-3">3</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-size:18px">✅</span>
+                <div>
+                  <div style="font-weight:600;color:#5B8AE0">Ganador correcto</div>
+                  <span class="pts-example">Predijiste 2-0 y terminó 3-1 (mismo ganador)</span>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:12px;color:#6B7A99">Victoria / empate / derrota correcto</td>
+            <td style="text-align:right"><span class="pts-val pts-1">1</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-size:18px">❌</span>
+                <div>
+                  <div style="font-weight:600;color:#6B7A99">Resultado incorrecto</div>
+                  <span class="pts-example">Predijiste 2-0 y terminó 0-1</span>
+                </div>
+              </div>
+            </td>
+            <td style="font-size:12px;color:#6B7A99">Ganador equivocado</td>
+            <td style="text-align:right"><span class="pts-val pts-0">0</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight" style="margin-top:12px">
+      <span class="hl-icon">💡</span>
+      <div class="hl-text">En partidos de eliminación directa que se definen por <strong>penales o prórroga</strong>, se considera el resultado al final del tiempo reglamentario (90 minutos) para efectos de puntuación.</div>
+    </div>
+  </div>
+
+  <!-- 3. PARTIDOS Y FASES -->
+  <div class="section">
+    <div class="section-hdr">
+      <div class="section-num num-blue">3</div>
+      <span class="section-title">Partidos y fases</span>
+    </div>
+    <div class="cards-grid">
+      <div class="rule-card" style="border-color:rgba(255,209,0,.2)">
+        <span class="rc-icon">🟡</span>
+        <div class="rc-title">Fase de grupos</div>
+        <div class="rc-body"><strong style="color:#FFD100">72 partidos</strong> · Grupos A al L · 11 junio – 27 junio 2026. Cada grupo tiene 4 equipos y 6 partidos.</div>
+      </div>
+      <div class="rule-card" style="border-color:rgba(0,61,165,.35)">
+        <span class="rc-icon">🔵</span>
+        <div class="rc-title">Eliminatorias</div>
+        <div class="rc-body"><strong style="color:#5B8AE0">Dieciseisavos → Final</strong> · Los equipos se confirman con los resultados de grupos. Hay que predecir también estos partidos.</div>
+      </div>
+    </div>
+    <div class="highlight" style="margin-top:12px">
+      <span class="hl-icon">📋</span>
+      <div class="hl-text">Cada participante debe predecir <strong>todos los partidos del torneo</strong>, incluyendo eliminatorias. Los partidos de la fase de grupos ya están cargados. Los de eliminatoria aparecen con los equipos clasificados una vez se conozcan.</div>
+    </div>
+  </div>
+
+  <!-- 4. REGLAS DE JUEGO -->
+  <div class="section">
+    <div class="section-hdr">
+      <div class="section-num num-blue">4</div>
+      <span class="section-title">Reglas de juego</span>
+    </div>
+    <div class="rules-box">
+      <div class="rb-row">
+        <span class="rb-icon">⏰</span>
+        <div class="rb-text">
+          <h4>Cierre de predicciones</h4>
+          <p>Cada partido se bloquea exactamente a la hora de inicio (hora local Ecuador). No se aceptan predicciones tardías bajo ninguna circunstancia.</p>
+        </div>
+      </div>
+      <div class="rb-row">
+        <span class="rb-icon">👤</span>
+        <div class="rb-text">
+          <h4>Una cuenta por persona</h4>
+          <p>Cada participante puede tener una sola cuenta. Las cuentas duplicadas o sospechosas serán eliminadas por el administrador.</p>
+        </div>
+      </div>
+      <div class="rb-row">
+        <span class="rb-icon">🔍</span>
+        <div class="rb-text">
+          <h4>Transparencia total</h4>
+          <p>Una vez cerrado un partido, todos pueden ver las predicciones de los demás participantes. El ranking es público en tiempo real.</p>
+        </div>
+      </div>
+      <div class="rb-row">
+        <span class="rb-icon">📊</span>
+        <div class="rb-text">
+          <h4>Resultados oficiales</h4>
+          <p>El administrador ingresa los resultados reales al finalizar cada partido. Solo se toman en cuenta los goles al término del tiempo reglamentario (90 min).</p>
+        </div>
+      </div>
+      <div class="rb-row">
+        <span class="rb-icon">🚫</span>
+        <div class="rb-text">
+          <h4>Sin modificaciones post-cierre</h4>
+          <p>Una vez bloqueado un partido, ningún participante puede editar su predicción. Tampoco el administrador puede hacerlo en nombre de otro.</p>
+        </div>
+      </div>
+      <div class="rb-row">
+        <span class="rb-icon">💬</span>
+        <div class="rb-text">
+          <h4>Espíritu del grupo</h4>
+          <p>Esta quiniela es para divertirnos y competir sanamente. Recuerda: "Sin Stickers Ofensivos" aplica también en el chat del grupo. 😄</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. DESEMPATE -->
+  <div class="section">
+    <div class="section-hdr">
+      <div class="section-num num-red">5</div>
+      <span class="section-title">Criterios de desempate</span>
+    </div>
+    <div class="tiebreak">
+      <h4>🔴 En caso de empate en puntos al final del torneo:</h4>
+      <ol>
+        <li><strong>Mayor número de marcadores exactos</strong> — quien haya acertado más veces el resultado exacto (3 pts) gana el desempate.</li>
+        <li><strong>Mayor número de resultados correctos</strong> — si persiste el empate, gana quien tenga más predicciones con el ganador correcto (1 pt).</li>
+        <li><strong>Predicción de la Final</strong> — si aún hay empate, gana quien haya acertado el resultado del partido final. Si ninguno acertó, se comparte el mérito entre los empatados.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 6. CALENDARIO -->
+  <div class="section">
+    <div class="section-hdr">
+      <div class="section-num num-yellow">6</div>
+      <span class="section-title">Fechas clave</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#FFD100;border-color:#0D0F14"></div>
+        <div class="tl-content">
+          <h4>11 de junio, 2026</h4>
+          <p>Inicio del torneo — México vs Sudáfrica. <span class="badge b-yellow">Primer partido</span></p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#FFD100;border-color:#0D0F14"></div>
+        <div class="tl-content">
+          <h4>14 de junio — Debut Ecuador 🇪🇨</h4>
+          <p>Costa de Marfil vs <strong style="color:#FFD100">Ecuador</strong> · 18:00 hora Ecuador · Filadelfia <span class="badge b-yellow">¡A predecir!</span></p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#003DA5;border-color:#0D0F14"></div>
+        <div class="tl-content">
+          <h4>11 junio – 27 junio</h4>
+          <p>Fase de grupos (72 partidos). Los pronósticos se cierran partido a partido.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#003DA5;border-color:#0D0F14"></div>
+        <div class="tl-content">
+          <h4>28 junio – 13 julio</h4>
+          <p>Fase eliminatoria — Dieciseisavos, Octavos, Cuartos y Semifinales.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:#C8102E;border-color:#0D0F14"></div>
+        <div class="tl-content">
+          <h4>19 de julio, 2026 — La Gran Final</h4>
+          <p>MetLife Stadium, Nueva York/NJ. El campeón de la quiniela se define aquí. <span class="badge b-red">Final</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUMEN -->
+  <div style="background:linear-gradient(135deg,#141720,#1A1E2A);border:1px solid rgba(255,209,0,.2);border-radius:16px;padding:24px;text-align:center">
+    <div style="font-size:32px;margin-bottom:10px">🇪🇨⚽🏆</div>
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:#fff;letter-spacing:.06em;margin-bottom:8px">¡Que gane el mejor!</div>
+    <p style="font-size:13px;color:#6B7A99;max-width:420px;margin:0 auto">72 partidos · Cierre automático por partido · Ranking en tiempo real · El torneo más grande de la historia del fútbol.</p>
+    <div style="display:flex;justify-content:center;gap:10px;margin-top:16px;flex-wrap:wrap">
+      <span class="badge b-yellow">⭐ Exacto = 3 pts</span>
+      <span class="badge b-blue">✅ Ganador = 1 pt</span>
+      <span style="display:inline-flex;align-items:center;padding:2px 9px;border-radius:8px;font-size:11px;font-family:'JetBrains Mono',monospace;background:rgba(107,122,153,.1);color:#6B7A99;border:1px solid rgba(107,122,153,.2)">❌ Incorrecto = 0 pts</span>
+      <span style="display:inline-flex;align-items:center;padding:2px 9px;border-radius:8px;font-size:11px;font-family:'JetBrains Mono',monospace;background:rgba(200,16,46,.1);color:#E05B6B;border:1px solid rgba(200,16,46,.2)">🔴 Desempate = más exactos</span>
+    </div>
+    <div style="margin-top:20px">
+      <a href="quiniela_ucsg.html" style="display:inline-flex;align-items:center;gap:8px;background:#FFD100;color:#0D0F14;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.06em;padding:12px 28px;border-radius:10px;text-decoration:none;font-weight:700;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">⚽ IR A LA QUINIELA</a>
+    </div>
+  </div>
+
+</main>
+
+<div class="footer">UCSG Sin Stickers Ofensivos · Quiniela Mundial 2026 · Hecho con ❤️ en Ecuador 🇪🇨</div>
+<div class="tricolor"></div>
+</body>
+</html>
